@@ -1,0 +1,114 @@
+/* 디자인 초기화 */
+h1,
+input,
+textarea,
+button,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+} 
+
+
+textarea,
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  resize: none;
+  outline: none;
+}
+*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.title-btn {
+  padding-bottom: 50px;
+}
+
+/* 메모 */
+.memo-wrap {
+  width: 250px;
+  margin-right: auto;
+}
+
+.top-memo {
+  display: flex;
+}
+
+input {
+  display: block;
+  width: 1200px;
+  height: 30px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.input-title {
+  width: 1200px;
+  height: 30px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+textarea {
+  width: 100%;
+  height: 250px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.show-text {
+  width: 100%;
+  overflow-y: auto;
+  max-height: 250px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  resize: none;
+  white-space: pre-wrap;
+  background-color: white;
+}
+
+button {
+  display: block;
+  width: 306px;
+  height: 30px;
+}
+
+.memo-wrap .hidden {
+  display: none;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+@media (max-width: 520px) {
+  main {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
