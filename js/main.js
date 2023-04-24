@@ -22,8 +22,8 @@ function newMemo(title = "", text = "") {
       <input type="text" class="memo-title ${
         title ? "hidden" : ""
       }" value="${title}" maxlength="20" placeholder="제목" />
-      <button class="edit">등록</button>
-      <button class="delete">삭제</button>
+      <button class="edit"></button>
+      <button class="delete"></button>
     </div>
     <div class="show-text ${text ? "" : "hidden"}">${text}</div>
     <textarea class="${text ? "hidden" : ""}">${text}</textarea>
@@ -42,24 +42,16 @@ function newMemo(title = "", text = "") {
     titleArea.classList.toggle("hidden");
     titleShow.classList.toggle("hidden");
 
-    if (editBtn.textContent === "등록") {
-      editBtn.textContent = "수정";
-      textArea.focus();
-
-      if (!titleArea.value) {
-        const now = new Date();
-        titleArea.value = `${now.getFullYear()}.${
-          now.getMonth() + 1
-        }.${now.getDate()} ${now.getHours()}:${now.getMinutes()}`;
-        titleShow.innerHTML = titleArea.value;
-      }
-      textShow.innerHTML = textArea.value;
-    } else {
-      textShow.innerHTML = textArea.value;
+    if (!titleArea.value) {
+      const now = new Date();
+      titleArea.value = `${now.getFullYear()}.${
+        now.getMonth() + 1
+      }.${now.getDate()} ${now.getHours()}:${now.getMinutes()}`;
       titleShow.innerHTML = titleArea.value;
-      editBtn.textContent = "등록";
-      update();
     }
+    textShow.innerHTML = textArea.value;
+    titleShow.innerHTML = titleArea.value;
+    update();
   });
 
   delBtn.addEventListener("click", () => {
