@@ -73,12 +73,12 @@
   --header-font-family: "NeoDunggeunmoPro-Regular", sans-serif;
   --title-font-color: #392c66;
 
-  --add-background: #7489cd;
-  --add-hover-background: #bea857;
+  --add-background: #7476cd;
+  --add-hover-background: rgb(179, 149, 85);
   --add-hover-box-shadow: #6e7ec9;
   --add-active-box-shadow: #6e7ec9;
 
-  --p-font-color: #d3bd6e;
+  --p-font-color: rgb(205 161 68);
   --p-font-shadow: #000;
   --p-box-shadow: #000;
   --p-background: #52457e;
@@ -150,7 +150,7 @@ body {
   object-fit: cover;
   background-attachment: fixed;
 
-  transition: all 0.3s;
+  transition: all 0.3s ease 0s;
 }
 
 /* scrollbar */
@@ -179,6 +179,19 @@ h1 {
   font-size: 5rem;
   color: var(--title-font-color);
   text-shadow: 3px 5px aqua;
+}
+
+h1:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  from {
+    transform: translate(0, 0);
+  }
+  65% {
+    transform: translate(0, 15px);
+  }
 }
 
 p {
@@ -402,6 +415,23 @@ textarea {
 h1.neon {
   text-shadow: 0 0 5px #b1acac, 0 0 10px #b1acac, 0 0 20px #f89df4,
     0 0 35px #f89df4, 0 0 50px #d565d0, 0 0 75px #ff00f4;
+}
+
+h1.neon:hover {
+  animation: blink 1s ease-in-out infinite;
+  transition: all 0.3s ease 0s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
 }
 
 .dark p {
