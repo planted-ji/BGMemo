@@ -1,1 +1,1 @@
-# simpleNote
+# BGMemo
