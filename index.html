@@ -5,19 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memo</title>
+    <title>BGMemo</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body class="light dark">
+<body class="light">
     <header>
+        <!-- 배경음악 플레이어 -->
+        <article class="music-player">
+            <div class="player-controls">
+                <button class="play-btn" aria-label="배경음악 재생"></button>
+                <button class="pause-btn" aria-label="배경음악 일시정지"></button>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+            <div class="btn-controls">
+                <button class="mode-switch-btn" aria-label="다크모드 전환"></button>
+            </div>
+        </article>
+        <!-- 제목 및 메모 추가 버튼 -->
         <section class="title-btn">
             <h1>Good<br>Morning</h1>
-            <button type="button" class="add-btn">+</button>
+            <p>오늘 하루도 화이팅!</p>
+            <button type="button" class="add-btn" aria-label="메모장 추가">+</button>
         </section>
     </header>
-    <main>
-    </main>
+    <!-- 메모 -->
+    <main></main>
     <script src="./js/main.js"></script>
 </body>
 
