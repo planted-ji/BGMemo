@@ -133,7 +133,8 @@ audio2.addEventListener("timeupdate", () => {
 function playMusic() {
   if (isPlaying) {
     if (currentAudio) {
-      currentAudio.play();
+      stopMusic();
+      playBtn.classList.remove("stop");
     }
   } else {
     isPlaying = true;
@@ -141,6 +142,7 @@ function playMusic() {
       currentAudio = audio1;
     }
     currentAudio.play();
+    playBtn.classList.add("stop");
   }
 }
 

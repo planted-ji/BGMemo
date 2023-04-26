@@ -60,6 +60,7 @@
   --player-progress-bar: #e6e6e6;
   --player-progress-length: rgb(91, 227, 236);
   --player-play-color: url("../img/play.svg");
+  --player-stop-color: url("../img/stop.svg");
   --player-pause-color: url("../img/pause.svg");
 
   --switch-img-color: url("../img/moon.svg");
@@ -93,6 +94,7 @@
   --player-progress-bar: #555;
   --player-progress-length: #d0a3fd;
   --player-play-color: url("../img/playDark.svg");
+  --player-stop-color: url("../img/stopDark.svg");
   --player-pause-color: url("../img/pauseDark.svg");
 
   --switch-img-color: url("../img/sun.svg");
@@ -356,6 +358,10 @@ textarea {
 
 .play-btn {
   background-image: var(--player-play-color);
+}
+
+.play-btn.stop {
+  background-image: var(--player-stop-color);
 }
 
 .pause-btn {
