@@ -13,24 +13,26 @@ allMemo.forEach((memo) => {
   main.appendChild(memoWrap);
 });
 
-function newMemo(title = "", text = "") {
+function newMemo(title = null, text = null) {
   const memoWrap = document.createElement("article");
   memoWrap.classList.add("memo-wrap");
   memoWrap.innerHTML = `
-  <div class="top-memo">
-  <div class="input-title ${title ? "" : "hidden"}">${title}</div>
-  <label for="memo-title" class="a11y-hidden">제목</label>
-  <input type="text" class="memo-title ${
-    title ? "hidden" : ""
-  }" value="${title}" maxlength="40" placeholder="제목" id="memo-title" />
-  <button type="button" class="edit" aria-label="메모 수정"></button>
-  <button type="button" class="delete" aria-label="메모 삭제"></button>
-</div>
-<div class="show-text ${text ? "" : "hidden"}">${text}</div>
-<label for="memo-text" class="a11y-hidden">내용</label>
-<textarea class="${
-    text ? "hidden" : ""
-  }" id="memo-text" placeholder="내용"></textarea>
+    <div class="top-memo">
+      <div class="input-title ${title ? "" : "hidden"}">${
+    title || "제목 없음"
+  }</div>
+      <label for="memo-title" class="a11y-hidden">제목</label>
+      <input type="text" class="memo-title ${title ? "hidden" : ""}" value="${
+    title || ""
+  }" maxlength="40" placeholder="제목" id="memo-title" />
+      <button type="button" class="edit" aria-label="메모 수정"></button>
+      <button type="button" class="delete" aria-label="메모 삭제"></button>
+    </div>
+    <div class="show-text ${text ? "" : "hidden"}">${text || "내용 없음"}</div>
+    <label for="memo-text" class="a11y-hidden">내용</label>
+    <textarea class="${
+      text ? "hidden" : ""
+    }" id="memo-text" placeholder="내용">${text || ""}</textarea>
   `;
 
   const editBtn = memoWrap.querySelector(".edit");
@@ -65,6 +67,11 @@ function newMemo(title = "", text = "") {
 
   titleArea.addEventListener("input", () => {
     titleShow.innerHTML = titleArea.value;
+    update();
+  });
+
+  textArea.addEventListener("input", () => {
+    textShow.innerHTML = textArea.value;
     update();
   });
 
