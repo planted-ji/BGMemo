@@ -22,7 +22,7 @@ function newMemo(title = "", text = "") {
   <label for="memo-title" class="a11y-hidden">제목</label>
   <input type="text" class="memo-title ${
     title ? "hidden" : ""
-  }" value="${title}" maxlength="20" placeholder="제목" id="memo-title" />
+  }" value="${title}" maxlength="17" placeholder="제목" id="memo-title" />
   <button type="button" class="edit" aria-label="메모 수정"></button>
   <button type="button" class="delete" aria-label="메모 삭제"></button>
 </div>
