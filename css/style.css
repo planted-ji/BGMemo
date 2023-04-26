@@ -317,6 +317,7 @@ textarea {
   padding: 5px;
   box-sizing: border-box;
   resize: none;
+  color: #999999;
   background-color: var(--bottom-memo-background);
 }
 
