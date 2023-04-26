@@ -282,12 +282,17 @@ main {
 }
 
 .top-memo button {
-  width: 20vh;
+  min-width: 40px;
+}
+
+input,
+textarea {
+  font-size: 1rem;
 }
 
 input {
   width: 170px;
-  height: 30px;
+  height: auto;
   font-weight: bold;
   box-sizing: border-box;
   padding: 5px;
@@ -296,8 +301,8 @@ input {
 }
 
 .input-title {
-  width: 600px;
-  height: 30px;
+  min-width: 170px;
+  height: auto;
   font-weight: bold;
   box-sizing: border-box;
   padding: 5px;
