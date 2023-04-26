@@ -103,21 +103,6 @@ let isPlaying = false;
 let isDarkMode = false;
 let currentAudio = null;
 
-function pauseMusic() {
-  if (currentAudio) {
-    currentAudio.pause();
-  }
-  isPlaying = false;
-}
-
-function stopMusic() {
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
-  isPlaying = false;
-}
-
 const audio1 = new Audio("./audio/GoodMorning.mp3");
 audio1.addEventListener("timeupdate", () => {
   const progress = (audio1.currentTime / audio1.duration) * 100;
@@ -130,11 +115,27 @@ audio2.addEventListener("timeupdate", () => {
   progressBar.style.width = `${progress}%`;
 });
 
+function pauseMusic() {
+  if (currentAudio) {
+    currentAudio.pause();
+  }
+  isPlaying = false;
+  playBtn.classList.toggle("stop", isPlaying);
+}
+
+function stopMusic() {
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
+  isPlaying = false;
+  playBtn.classList.toggle("stop", isPlaying);
+}
+
 function playMusic() {
   if (isPlaying) {
     if (currentAudio) {
       stopMusic();
-      playBtn.classList.remove("stop");
     }
   } else {
     isPlaying = true;
@@ -142,8 +143,8 @@ function playMusic() {
       currentAudio = audio1;
     }
     currentAudio.play();
-    playBtn.classList.add("stop");
   }
+  playBtn.classList.toggle("stop", isPlaying);
 }
 
 function switchMode() {
