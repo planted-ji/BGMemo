@@ -35,6 +35,7 @@
 
 :root {
   --font-color: #000;
+  --scrollbar-color: rgba(0, 0, 0, 0.2);
   --body-background: url("../img/light.jpg");
 
   --header-font-family: "LeeSeoyun", sans-serif;
@@ -50,8 +51,10 @@
   --p-box-shadow: #fff;
   --p-background: rgba(83, 238, 238, 0.7);
 
+  --main-background: rgb(255 255 255 / 60%);
   --memo-wrap-box-shadow: rgba(209, 209, 209, 0.5);
   --top-memo-background: rgb(138, 251, 255);
+  --memo-btn-background: #53d8e7;
   --bottom-memo-background: #fff;
   --edit-img-color: url("../img/edit.svg");
   --delete-img-color: url("../img/delete.svg");
@@ -69,6 +72,7 @@
 
 .dark {
   --font-color: #ffffffc2;
+  --scrollbar-color: rgba(255, 255, 255, 0.4);
   --body-background: url("../img/dark.jpg");
 
   --header-font-family: "NeoDunggeunmoPro-Regular", sans-serif;
@@ -84,8 +88,10 @@
   --p-box-shadow: #000;
   --p-background: #52457e;
 
+  --main-background: rgb(111 109 137 / 50%);
   --memo-wrap-box-shadow: #4e63b391;
   --top-memo-background: #413760;
+  --memo-btn-background: #2e244e;
   --bottom-memo-background: #101010;
   --edit-img-color: url("../img/editDark.svg");
   --delete-img-color: url("../img/deleteDark.svg");
@@ -165,7 +171,11 @@ body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--scrollbar-color);
+}
+
+.dark::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
 }
 
 /* header */
@@ -201,7 +211,7 @@ p {
   font-weight: bold;
   font-size: 2rem;
   color: var(--p-font-color);
-  margin-bottom: 40px;
+  margin: 0px 10px 40px 10px;
   padding: 5px;
   border-radius: 10px;
   text-shadow: 3px 3px var(--p-font-shadow);
@@ -236,13 +246,20 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  /* 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 20px;
-  margin: 0px 100px 0px 100px;
-  */
+
+  background-color: var(--main-background);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #f0f0f0;
+
+  max-height: 393px;
+  overflow-y: auto;
+}
+
+main:empty {
+  background-color: rgb(255 255 255 / 0%);
+  box-shadow: none;
 }
 
 .memo-wrap {
@@ -280,6 +297,16 @@ main {
   background: var(--delete-img-color) no-repeat;
   border-radius: 0px 5px 0px 0px;
   background-color: var(--top-memo-background);
+}
+
+.edit,
+.delete {
+  background-position: center;
+}
+
+.edit:active,
+.delete:active {
+  background-color: var(--memo-btn-background);
 }
 
 .top-memo {
@@ -457,9 +484,34 @@ h1.neon:hover {
   font-size: 1.7rem;
 }
 
+.dark main {
+  background-color: var(--main-background);
+  box-shadow: none;
+}
+
+.dark main:empty {
+  background-color: rgb(255 255 255 / 0%);
+  box-shadow: none;
+}
+
+.dark .edit:active,
+.dark .delete:active {
+  background-color: var(--memo-btn-background);
+}
+
 @media (min-width: 531px) and (max-width: 800px) {
   main {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .memo-wrap {
+    margin-right: 0;
+  }
+
+  input,
+  .input-title,
+  textarea {
+    width: 100%;
   }
 }
 
