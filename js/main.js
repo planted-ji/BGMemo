@@ -11,6 +11,7 @@ addBtn.addEventListener("click", function () {
 allMemo.forEach((memo) => {
   const memoWrap = newMemo(memo.title, memo.text);
   main.appendChild(memoWrap);
+  console();
 });
 
 function newMemo(title = "", text = "") {
@@ -32,7 +33,7 @@ function newMemo(title = "", text = "") {
     <label for="memo-text" class="a11y-hidden">내용</label>
     <textarea class="${
       text ? "hidden" : ""
-    }" id="memo-text" placeholder="내용">${text || ""}</textarea>
+    }" id="memo-text" placeholder="내용을 입력하세요">${text || ""}</textarea>
   `;
 
   const editBtn = memoWrap.querySelector(".edit");
@@ -90,8 +91,6 @@ function update() {
 
     if (title || text) {
       allMemo.push({ title, text, inputVal, inputVall });
-    } else {
-      allMemo.push({ title: "", text: "", inputVal: "", inputVall: "" });
     }
   });
 
