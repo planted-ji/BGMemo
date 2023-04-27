@@ -13,7 +13,7 @@ allMemo.forEach((memo) => {
   main.appendChild(memoWrap);
 });
 
-function newMemo(title = null, text = null) {
+function newMemo(title = "", text = "") {
   const memoWrap = document.createElement("article");
   memoWrap.classList.add("memo-wrap");
   memoWrap.innerHTML = `
