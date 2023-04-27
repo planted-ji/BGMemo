@@ -11,7 +11,6 @@ addBtn.addEventListener("click", function () {
 allMemo.forEach((memo) => {
   const memoWrap = newMemo(memo.title, memo.text);
   main.appendChild(memoWrap);
-  console();
 });
 
 function newMemo(title = "", text = "") {
@@ -70,15 +69,8 @@ function newMemo(title = "", text = "") {
     titleShow.innerHTML = titleArea.value;
     update();
   });
-
-  textArea.addEventListener("input", () => {
-    textShow.innerHTML = textArea.value;
-    update();
-  });
-
   return memoWrap;
 }
-
 function update() {
   const memoWraps = document.querySelectorAll(".memo-wrap");
   const allMemo = [];
@@ -88,12 +80,10 @@ function update() {
     const inputVal = memoWrap.querySelector(".input-title").textContent;
     const text = memoWrap.querySelector("textarea").value;
     const inputVall = memoWrap.querySelector(".show-text").value;
-
     if (title || text) {
       allMemo.push({ title, text, inputVal, inputVall });
     }
   });
-
   localStorage.setItem("allMemo", JSON.stringify(allMemo));
 }
 
