@@ -122,7 +122,6 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   border: none;
-  outline: none;
   cursor: pointer;
   background-color: transparent;
 }
