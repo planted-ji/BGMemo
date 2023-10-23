@@ -150,6 +150,7 @@ function switchMode() {
   const h1 = document.querySelector("h1");
   const p = document.querySelector("p");
   const body = document.querySelector("body");
+  const modeSwitchBtn = document.querySelector(".mode-switch-btn");
 
   body.classList.toggle("dark");
   isDarkMode = !isDarkMode;
@@ -160,12 +161,14 @@ function switchMode() {
 
     h1.textContent = "NIGHT\nDANCER";
     p.textContent = "🕺춤추며 언제나 즐겁게!💃";
+    modeSwitchBtn.setAttribute("aria-label", "낮 모드로 전환하기");
   } else {
     currentAudio = audio1;
     document.querySelector(".title-btn h1").classList.remove("neon");
 
     h1.textContent = "Good\nMorning";
     p.textContent = "오늘 하루도 화이팅!";
+    modeSwitchBtn.setAttribute("aria-label", "밤 모드로 전환하기");
   }
 
   if (isPlaying) {
