@@ -17,7 +17,7 @@ function newMemo(title = "", text = "") {
   const memoWrap = document.createElement("article");
   memoWrap.classList.add("memo-wrap");
   memoWrap.innerHTML = `
-    <div class="top-memo">
+    <div class="write-memo">
       <div class="input-title ${title ? "" : "hidden"}">${
     title || "제목 없음"
   }</div>
@@ -25,16 +25,17 @@ function newMemo(title = "", text = "") {
       <input type="text" class="memo-title ${title ? "hidden" : ""}" value="${
     title || ""
   }" maxlength="40" placeholder="제목" id="memo-title" />
-      <button type="button" class="edit" aria-label="메모 수정"></button>
-      <button type="button" class="delete" aria-label="메모 삭제"></button>
-    </div>
-    <div class="show-text ${text ? "" : "hidden"}">${text || "내용 없음"}</div>
+  <div class="show-text ${text ? "" : "hidden"}">${text || "내용 없음"}</div>
     <label for="memo-text" class="a11y-hidden">내용</label>
     <textarea class="${
       text ? "hidden" : ""
     }" id="memo-text" placeholder="내용을 입력하세요">${text || ""}</textarea>
+    </div>
+    <div class="btn-memo">
+    <button type="button" class="edit" aria-label="메모 수정"></button>
+    <button type="button" class="delete" aria-label="메모 삭제"></button>
+    </div>
   `;
-
   const editBtn = memoWrap.querySelector(".edit");
   const delBtn = memoWrap.querySelector(".delete");
   const titleArea = memoWrap.querySelector(".memo-title");
