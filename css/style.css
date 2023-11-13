@@ -180,12 +180,12 @@ body {
 
 body {
   overflow-y: scroll;
-  scrollbar-width: none; /* Firefox에 대한 스크롤바 숨김 */
-  -ms-overflow-style: none; /* IE/Edge에 대한 스크롤바 숨김 */
+  scrollbar-width: none; /* Firefox 스크롤바 숨김 */
+  -ms-overflow-style: none; /* IE와 Edge 스크롤바 숨김 */
 }
 
 body::-webkit-scrollbar {
-  width: 0; /* Chrome, Safari, Opera에 대한 스크롤바 숨김 */
+  width: 0; /* Chrome, Safari, Opera 스크롤바 숨김 */
 }
 
 /* header */
