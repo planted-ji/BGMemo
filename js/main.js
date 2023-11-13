@@ -143,6 +143,7 @@ function playMusic() {
   playBtn.classList.toggle("stop", isPlaying);
 }
 
+// 테마 전환
 function switchMode() {
   if (currentAudio) {
     stopMusic();
