@@ -1,5 +1,8 @@
 # 📝 BGMemo
-https://planted-ji.github.io/BGMemo/  
+![image](https://github.com/planted-ji/BGMemo/assets/123479997/3b7303b3-47e4-4d43-8acb-9b747b0a4690)
+|              배포 링크                |  
+| :----------------------------------: | 
+| https://planted-ji.github.io/BGMemo/ | 
 
 ## ⏰ 개발 기간
 - 23.04.23 ~ 23.04.27
