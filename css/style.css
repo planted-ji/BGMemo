@@ -371,6 +371,7 @@ textarea {
 
 .show-text {
   overflow-y: auto;
+  word-wrap: break-word;
   height: 200px;
   box-sizing: border-box;
   white-space: pre-wrap;
